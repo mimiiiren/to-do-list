@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+body {
+  font-family: Indie Flower, Arial, Helvetica, sans-serif;
+  background-color: #F8C049;
+  color: rgb(94, 25, 25);
+}
+.to-do-list {
+  border-radius: 10px;
+  background-color: whitesmoke;
+  width: 500px;
+  height: fit-content;
+  text-align: center;
+  margin: 3rem auto;
+  padding: 10px;
+}
+h1 {
+font-size: 40px;
+}
+input {
+  border: solid 2px rgb(197, 194, 194);
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 1rem;
+  text-align: left;
+}
+.checkbox {
+  width: 25px;
+  height: 15px;
+}
+ul {
+  list-style-type:none;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: left;
+}
+.task-component {
+  display: flex;
+  align-items: center;
+   justify-content: space-between; 
+  width: 100%; 
+}
+button {
+  margin: 10px;
+  padding: 10px;
+background-color: #d7f1a4;
+border-radius: 5rem;
+border: none;
+}
+button:hover {
+  transform: scale(1.05);
+  transition: all;
+  cursor: pointer;
+}
