@@ -16,6 +16,8 @@ export default function ToDoList() {
   // this function connects when user checks the checkbox, it updates completed property to true
   function toggleCheckbox(id) {
     setTasks(
+      // ...selectedTask is spread operator, creates a copy of task object and unpacks each property
+      // flips completed property to opposite boolean value
       tasks.map((selectedTask) =>
         selectedTask.id === id
           ? { ...selectedTask, completed: !selectedTask.completed }
@@ -25,11 +27,10 @@ export default function ToDoList() {
   }
   // event is the action of user dragging/dropping
   // active = dragging, over = dropping, both are properties containing selected task id as values
-  // destructure
   function handleDragEnd(event) {
     const { active, over } = event;
     // if dragged id is not the same as dropped id, update tasks array
-    // find
+    // find index of that item and make it equal to the dragged or dropped id
     if (active.id !== over.id) {
       setTasks((items) => {
         const oldIndex = items.findIndex((item) => item.id === active.id);
@@ -113,8 +114,10 @@ export default function ToDoList() {
           Add Task
         </button>
       </div>
-
+      {/* detects when items are close enough to swap */}
       <DndContext collisionDetection={closestCorners} onDragEnd={handleDragEnd}>
+        {/* sortablecontext defines sortable area and only needs id to track each item */}
+        {/* iterate over each task object in tasks array and callback the property value of id */}
         <SortableContext
           items={tasks.map((task) => task.id)}
           strategy={verticalListSortingStrategy}

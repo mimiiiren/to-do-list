@@ -1,4 +1,3 @@
-import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
@@ -19,6 +18,7 @@ export default function Task({ task, deleteTask, toggleCheckbox }) {
           className="task-component"
           key={task.id}
         >
+          {/* drag handle */}
           <div className="right-drag-handle">
             <span
               {...attributes}
@@ -32,10 +32,10 @@ export default function Task({ task, deleteTask, toggleCheckbox }) {
               className="checkbox"
               checked={task.completed}
               onChange={() => {
-                console.log("Checkbox clicked for task:", task.id);
                 toggleCheckbox(task.id);
               }}
             />
+            {/* style uses {} this allows javascript to run */}
             <span
               style={{
                 textDecoration: task.completed ? "line-through" : "none",
@@ -47,7 +47,6 @@ export default function Task({ task, deleteTask, toggleCheckbox }) {
             <button
               className="delete-button"
               onClick={() => deleteTask(task.id)}
-              onPointerDown={(e) => e.stopPropagation()}
             >
               Delete
             </button>

@@ -8,7 +8,8 @@ body {
 .to-do-list {
   border-radius: 10px;
   background-color: whitesmoke;
-  width: 500px;
+  min-width: 500px;
+  width: fit-content;
   height: fit-content;
   text-align: center;
   margin: 3rem auto;
